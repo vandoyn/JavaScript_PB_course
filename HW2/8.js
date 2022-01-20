@@ -17,15 +17,24 @@ f([]) // Error: parameter can't be an empty
 */
 
 function f(arr) {
-    console.log(typeof arr);
-    if (typeof arr  !== 'array' ) {
+    //console.log(typeof arr);
+    //console.log(arr);
+    if (typeof arr  !== 'object' ) {
         throw new Error('parameter type should be an array');
-    } else if ( arr === [] ) {
+    } else if ( arr[0] === undefined ) {
         throw new Error('parameter can\'t be an empty');
     } else {
-        x=1;
+        console.log(arr[0]);
+        if (arr[1] === undefined) {
+            return
+        } else {
+            //console.log(arr.splice(0,1));
+            arr.splice(0,1)
+            f(arr);
+        }
     }
-    return arr;
 };
 
-console.log(f([5.9]));
+f([1,2,3]);
+//f(5);
+//f([]);
