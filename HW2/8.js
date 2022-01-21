@@ -17,8 +17,6 @@ f([]) // Error: parameter can't be an empty
 */
 
 function f(arr) {
-    //console.log(typeof arr);
-    //console.log(arr);
     if (typeof arr  !== 'object' ) {
         throw new Error('parameter type should be an array');
     } else if ( arr[0] === undefined ) {
@@ -28,7 +26,6 @@ function f(arr) {
         if (arr[1] === undefined) {
             return
         } else {
-            //console.log(arr.splice(0,1));
             arr.splice(0,1)
             f(arr);
         }
