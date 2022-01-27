@@ -23,4 +23,4 @@ function arrayFill(item, number){
     return arr;
 }
 
-console.log(arrayFill('x', 5));
+console.log(arrayFill(['t'], 5));
